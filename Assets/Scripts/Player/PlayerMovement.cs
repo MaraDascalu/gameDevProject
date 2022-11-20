@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float _forwardSpeed = 3.0f;
 
     [SerializeField]
-    private Vector2 _leftRightLimits = new(-4.225f, 4.225f);
+    private Vector2 _leftRightLimits = new(-20.325f, -11.675f);
 
     private Vector2 _movement = Vector2.zero;
 
