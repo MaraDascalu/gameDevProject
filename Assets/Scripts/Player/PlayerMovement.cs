@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 _movement = Vector2.zero;
 
+    public GameObject model;
+
+    static public bool ableToMove = true;
+
     public void Movement(InputAction.CallbackContext context)
     {
         _movement = context.ReadValue<Vector2>();
@@ -24,16 +28,30 @@ public class PlayerMovement : MonoBehaviour
         var velocity = new Vector3(_movement.x, 0.0f, 0.0f) * _leftRightSpeed;
         var newPosition = transform.localPosition + velocity * Time.deltaTime;
 
-        if (newPosition.x < _leftRightLimits.x)
+        if (Input.GetButtonDown("Jump"))
         {
-            newPosition.x = _leftRightLimits.x;
-            velocity.x = 0.0f;
+            model.GetComponent<Animator>().Play("Jump");
         }
 
-        if (newPosition.x > _leftRightLimits.y)
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            newPosition.x = _leftRightLimits.y;
-            velocity.x = 0.0f;
+            model.GetComponent<Animator>().Play("Slide");
+            transform.Translate(0.0f, 0.0f, 5.0f);
+        }
+
+        if (ableToMove == true)
+        {
+            if (newPosition.x < _leftRightLimits.x)
+            {
+                newPosition.x = _leftRightLimits.x;
+                velocity.x = 0.0f;
+            }
+
+            if (newPosition.x > _leftRightLimits.y)
+            {
+                newPosition.x = _leftRightLimits.y;
+                velocity.x = 0.0f;
+            }
         }
 
         transform.localPosition = newPosition;
