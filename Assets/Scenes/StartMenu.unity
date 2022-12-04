@@ -521,7 +521,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 573822715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586290770}
+        m_TargetAssemblyTypeName: ChangePlayerNameScript, Assembly-CSharp
+        m_MethodName: GoToPlayerNameChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &573822715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +585,7 @@ GameObject:
   - component: {fileID: 586290766}
   - component: {fileID: 586290765}
   - component: {fileID: 586290769}
+  - component: {fileID: 586290770}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -672,6 +685,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35ed2d9f0fa1840d2ae22bad5613859b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &586290770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586290764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53147e0e493234915b05fc801937d1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &727015211
