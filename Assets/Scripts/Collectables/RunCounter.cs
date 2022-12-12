@@ -7,6 +7,7 @@ using TMPro;
 public class RunCounter : MonoBehaviour
 {
     public GameObject runDisplay;
+    public GameObject runEndDisplay;
     public int runCount;
     public bool runIncrease = false;
 
@@ -23,6 +24,7 @@ public class RunCounter : MonoBehaviour
     {
         runCount++;
         runDisplay.GetComponent<TMP_Text>().text = "" + runCount;
+        runEndDisplay.GetComponent<TMP_Text>().text = "" + runCount;
         yield return new WaitForSeconds(0.25f);
         runIncrease = false;
     }
