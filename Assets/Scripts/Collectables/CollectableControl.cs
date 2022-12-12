@@ -7,10 +7,15 @@ using TMPro;
 public class CollectableControl : MonoBehaviour
 {
     public static int coinCounter = 0;
-    public GameObject cointCountDisplay;
+    public GameObject coinCountDisplay;
+    public GameObject coinEndDisplay;
+    public GameObject playerEndDisplay;
+    public GameObject playerNameDisplay;
 
     void Update()
     {
-        cointCountDisplay.GetComponent<TMP_Text>().text = "" + coinCounter;
+        coinCountDisplay.GetComponent<TMP_Text>().text = "" + coinCounter;
+        coinEndDisplay.GetComponent<TMP_Text>().text = "" + coinCounter;
+        playerEndDisplay.GetComponent<TMP_Text>().text = "Game Over " + playerNameDisplay.GetComponent<TMP_Text>().text;
     }
 }
