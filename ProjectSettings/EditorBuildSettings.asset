@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: 985e416d129b2f24ca771512e3ca9dcf
+  - enabled: 1
+    path: Assets/Scenes/PlayerBestScore.unity
+    guid: f896401bacce2410493351186c48ac62
   m_configObjects: {}
