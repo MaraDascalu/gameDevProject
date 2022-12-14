@@ -22878,7 +22878,6 @@ MonoBehaviour:
   _forwardSpeed: 10
   _leftRightLimits: {x: -20.325, y: -11.675}
   model: {fileID: 1758124426}
-  gravity: -20
 --- !u!114 &1320798176
 MonoBehaviour:
   m_ObjectHideFlags: 0

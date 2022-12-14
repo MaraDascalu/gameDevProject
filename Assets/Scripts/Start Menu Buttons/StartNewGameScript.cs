@@ -11,6 +11,6 @@ public class StartNewGameScript : MonoBehaviour
     public void PlayNewGame(){ 
         // Debug.Log(playerName);
         CollectableControl.coinCounter = 0;
-        SceneManager.LoadScene("City");
+        SceneManager.LoadScene("LevelPicker");
     }
 }
