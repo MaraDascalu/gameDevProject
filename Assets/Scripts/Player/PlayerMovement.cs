@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject model;
 
+    public float gravity = -20;
+
     static public bool ableToMove = false;
 
     public void Movement(InputAction.CallbackContext context)
@@ -54,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
                 velocity.x = 0.0f;
             }
         }
+
+        newPosition.y += gravity;
+
+        if (newPosition.y < 198.5f)
+            newPosition.y = 198.5f;
 
         transform.localPosition = newPosition;
         transform.Translate(0.0f, 0.0f, _forwardSpeed * Time.deltaTime);

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ public class GenerateLevel : MonoBehaviour
     public int position = 100;
     public bool sectionCreation = false;
     public int sectionNumber;
+    public List<GameObject> activeSections = new List<GameObject>();
+    public GameObject currentSection;
+    public bool firstDelete = true;
+    public bool sectionDelete = false;
 
     void Update()
     {
@@ -14,25 +19,38 @@ public class GenerateLevel : MonoBehaviour
         {
             sectionCreation = true;
             StartCoroutine(GenerateSection());
-           // StartCoroutine(DeleteSection());
+        }
+
+        if (sectionDelete == false)
+        {
+            sectionDelete = true;
+            StartCoroutine(DeleteSection());
         }
     }
 
     IEnumerator GenerateSection()
     {
         sectionNumber = Random.Range(0, 2);
-        Instantiate(section[sectionNumber], new Vector3(0, 0, position), Quaternion.identity);
+        currentSection = Instantiate(section[sectionNumber], new Vector3(0, 0, position), Quaternion.identity);
+        activeSections.Add(currentSection);
         position += 100;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(8);
         sectionCreation = false;
     }
 
-    /*IEnumerator DeleteSection()
-    {
-        sectionNumber = Random.Range(0, 2);
-        Instantiate(section[sectionNumber], new Vector3(0, 0, position), Quaternion.identity);
-        position += 100;
-        yield return new WaitForSeconds(2);
-        sectionCreation = false;
-    }*/
+    IEnumerator DeleteSection()
+        {
+            if(firstDelete == true)
+            {
+                yield return new WaitForSeconds(15);
+                firstDelete = false;
+            }
+
+            yield return new WaitForSeconds(15);
+            Destroy(activeSections[0]);
+            activeSections.RemoveAt(0);
+            sectionDelete = false;
+        }
 }
+
+

@@ -8,7 +8,6 @@ public class EndRunDisplay : MonoBehaviour
     public GameObject coinsLiveScore;
     public GameObject runLiveScore;
     public GameObject endScore;
-    public GameObject fade;
     public GameObject gameOverText;
     public GameObject nameDisplay;
     public GameObject endButton;
@@ -28,12 +27,12 @@ public class EndRunDisplay : MonoBehaviour
         endScore.SetActive(true);
         gameOverText.SetActive(true);
         endButton.SetActive(true);
+        PlayerMovement.ableToMove = false;
 
         if (System.Convert.ToInt32(coinsCount.GetComponent<TMP_Text>().text) > DisplayPlayerBestScoreAndName.playerBestScoreInt){
             DisplayPlayerBestScoreAndName.playerBestScoreInt = System.Convert.ToInt32(coinsCount.GetComponent<TMP_Text>().text);
         }
 
         yield return new WaitForSeconds(3);
-        fade.SetActive(true);
     }
 }
