@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerNameChange.unity
     guid: b0ea3a2167cd046a3aaf369d6884ef43
   - enabled: 1
+    path: Assets/Scenes/LevelPicker.unity
+    guid: 651c0caa745c34e40825a942731fff9b
+  - enabled: 1
     path: Assets/Scenes/City.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
