@@ -6,5 +6,7 @@ using UnityEngine;
 
 public class Avatar : ScriptableObject
 {
-    
+    public int avatarIndex;
+    public string avatarName;
+    public Object sceneToLoad;
 }

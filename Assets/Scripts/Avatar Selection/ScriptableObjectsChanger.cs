@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ScriptableObjectsChanger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private ScriptableObject[] scriptableObjects;
+    [SerializeField] private AvatarDisplay avatarDisplay;
+    private int currentIndex;
+
+    private void Awake() {
+        ChangeScripableObject(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void ChangeScripableObject(int _change) {
+        currentIndex += _change;
+
+        if (avatarDisplay != null) {
+            avatarDisplay.DisplayAvatar((Avatar)scriptableObjects[currentIndex]);
+        }
     }
 }
