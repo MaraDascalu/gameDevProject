@@ -72,4 +72,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 #Others
-ProjectSettings/ProjectVersion.txt
+ProjectSettings/ProjectVersion.txt.DS_Store
+Assets/.DS_Store
+Assets/Scripts/.DS_Store
+.DS_Store
