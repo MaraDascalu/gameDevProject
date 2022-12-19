@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/SampleScene.unity.meta
+guid: 146f08265c55046dab95ed79e3096dcc
+=======
 guid: 651c0caa745c34e40825a942731fff9b
+>>>>>>> main:Assets/Scenes/LevelPicker.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
