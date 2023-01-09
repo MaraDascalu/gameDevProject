@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(10.0f, 100.0f)]
     private float _leftRightSpeed = 10.0f;
 
-    [SerializeField, Range(1.0f, 10.0f)]
-    private float _forwardSpeed = 3.0f;
+    [SerializeField, Range(1.0f, 30.0f)]
+    public static float _forwardSpeed = 10f;
 
     [SerializeField]
     private Vector2 _leftRightLimits = new(-20.325f, -11.675f);
