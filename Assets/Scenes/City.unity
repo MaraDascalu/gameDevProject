@@ -8900,6 +8900,7 @@ MonoBehaviour:
   nameDisplay: {fileID: 258779578}
   endButton: {fileID: 1178568231}
   coinsCount: {fileID: 1097027966}
+  distanceCount: {fileID: 2076943115}
 --- !u!114 &468731386
 MonoBehaviour:
   m_ObjectHideFlags: 0
