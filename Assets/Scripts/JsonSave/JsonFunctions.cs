@@ -34,7 +34,7 @@ public class JsonFunctions : MonoBehaviour
             Save save = createSaveGameObject();
 
             string JsonString = JsonUtility.ToJson(save);
-            StreamWriter sw = new StreamWriter(Application.dataPath + "/PlayersData/" + StartNewGameScript.playerName + ".txt");
+            StreamWriter sw = new StreamWriter(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
             sw.Write(JsonString);
             sw.Close();
 
@@ -43,10 +43,10 @@ public class JsonFunctions : MonoBehaviour
 
         private void LoadByJSON()
         {
-            if(File.Exists(Application.dataPath + "/PlayersData/" + StartNewGameScript.playerName + ".txt"))
+            if(File.Exists(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt"))
             {
 
-                StreamReader sr = new StreamReader(Application.dataPath + "/PlayersData/" + StartNewGameScript.playerName + ".txt");
+                StreamReader sr = new StreamReader(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
                 string JsonString = sr.ReadToEnd();
                 sr.Close();
 
