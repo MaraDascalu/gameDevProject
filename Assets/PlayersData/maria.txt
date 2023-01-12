@@ -1,1 +1,1 @@
-{"totalCoins":15,"playerName":"maria","distanceHighscore":74,"coinHighscore":15}
+{"totalCoins":-67,"playerName":"maria","distanceHighscore":260,"coinHighscore":15}

@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GemCollect : MonoBehaviour
+public class BombCollect : MonoBehaviour
 {
-    public AudioSource gemSound;
+    public AudioSource bombSound;
 
      void OnTriggerEnter(Collider other)
     {
-        Debug.Log("GemSound");
-        gemSound.Play();
-        CollectableControl.coinCounter += 100;
+        Debug.Log("BombSound");
+        bombSound.Play();
+        CollectableControl.coinCounter -= 50;
         this.gameObject.SetActive(false);
     }
 }
