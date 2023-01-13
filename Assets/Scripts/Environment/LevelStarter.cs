@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelStarter : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LevelStarter : MonoBehaviour
     public GameObject fade;
     public AudioSource readySound;
     public AudioSource goSound;
+    public Slider slider;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class LevelStarter : MonoBehaviour
 
     IEnumerator CountSequence()
     {
+        slider.value = VolumeSlider.volume;
         yield return new WaitForSeconds(2.0f);
         count3.SetActive(true);
         readySound.Play();
