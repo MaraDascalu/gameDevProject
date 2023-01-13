@@ -1,0 +1,1 @@
+{"totalCoins":-67,"playerName":"maria","distanceHighscore":260,"coinHighscore":15}

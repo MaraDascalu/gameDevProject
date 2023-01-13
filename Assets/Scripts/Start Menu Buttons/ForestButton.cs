@@ -7,6 +7,7 @@ public class ForestButton : MonoBehaviour
 {
     public void GoToForestScene()
     {
-        SceneManager.LoadScene("Forest");
+        PlayerMovement.map = 2;
+        SceneManager.LoadScene("City");
     }
 }

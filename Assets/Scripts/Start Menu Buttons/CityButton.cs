@@ -7,6 +7,8 @@ public class CityButton : MonoBehaviour
 {
     public void GoToCityButton()
     {
+        PlayerMovement.map = 1;
         SceneManager.LoadScene("City");
+
     }
 }
