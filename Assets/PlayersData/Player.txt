@@ -1,0 +1,1 @@
+{"totalCoins":64,"playerName":"Player","distanceHighscore":108,"coinHighscore":64}

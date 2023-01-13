@@ -8,8 +8,9 @@ public class GemCollect : MonoBehaviour
 
      void OnTriggerEnter(Collider other)
     {
+        Debug.Log("GemSound");
         gemSound.Play();
-        CollectableControl.coinCounter += CollectableControl.coinCounter;
+        CollectableControl.coinCounter += 100;
         this.gameObject.SetActive(false);
     }
 }

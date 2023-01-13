@@ -8,4 +8,8 @@ public class EndGoToMenuButtonScript : MonoBehaviour
     public void GoToMenuScene(){ 
         SceneManager.LoadScene("StartMenu");
     }
+
+    public void TotalCoinsUpdate(){
+        DisplayTotalCoins.currentTotalCoins += CollectableControl.coinCounter;
+    }
 }

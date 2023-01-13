@@ -7,6 +7,7 @@ using TMPro;
 public class CollectableControl : MonoBehaviour
 {
     public static int coinCounter = 0;
+    public static int totalCoinsInt = 0;
     public GameObject coinCountDisplay;
     public GameObject coinEndDisplay;
     public GameObject playerEndDisplay;
