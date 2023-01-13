@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class CoffeeCollect : MonoBehaviour
 {
@@ -19,6 +18,7 @@ public class CoffeeCollect : MonoBehaviour
         PlayerMovement._forwardSpeed = 10.0f;
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         Debug.Log(PlayerMovement._forwardSpeed);
+        this.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,6 +30,7 @@ public class CoffeeCollect : MonoBehaviour
         Debug.Log("PlayerSpeed: " + PlayerMovement._forwardSpeed);
         Wait();
         Debug.Log(PlayerMovement._forwardSpeed);
+        
 
     }
 
