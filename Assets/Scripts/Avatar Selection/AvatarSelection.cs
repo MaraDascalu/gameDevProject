@@ -2,28 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AvatarSelection : MonoBehaviour
 {
-    [SerializeField] private Button previousButton;
-    [SerializeField] private Button nextButton;
-    private int currentAvatar;
+    private GameObject[] avatarList;
+    private int index;
 
-    private void Awake() {
-        SelectAvatar(0);
-    }
+    private void Start() {
+        index = PlayerPrefs.GetInt("CharacterSelected");
+        
+        avatarList = new GameObject[transform.childCount];
 
-    private void SelectAvatar(int _index) {
-
-        previousButton.interactable = (_index != 0);
+        //Fill the array with our models
         for (int i = 0 ; i < transform.childCount ; i++) {
-            transform.GetChild(i).gameObject.SetActive(i == _index);
+            avatarList[i] = transform.GetChild(i).gameObject;
         }
-        nextButton.interactable = (_index != transform.childCount - 1);
+
+        //We toggle off their renderer
+        foreach (GameObject avatar in avatarList){
+            avatar.SetActive(false);
+        }
+
+        //We toogle on the selected avatar
+        if (avatarList[index])
+            avatarList[index].SetActive(true);
     }
 
     public void ChangeAvatar(int _change) {
-        currentAvatar += _change;
-        SelectAvatar(currentAvatar);
+        //Toggle off the current model
+        avatarList[index].SetActive(false);
+
+        index += _change;
+        if (index < 0) {
+            index = avatarList.Length - 1;
+        }
+        else {
+            if (index == avatarList.Length)
+                index = 0;
+        }
+
+        //Toggle on the new model
+        avatarList[index].SetActive(true);
+    }
+
+    public void PlayNewGame(){ 
+        CollectableControl.coinCounter = 0;
+        PlayerPrefs.SetInt("CharacterSelected", index);
+        SceneManager.LoadScene("LevelPicker");
     }
 }
