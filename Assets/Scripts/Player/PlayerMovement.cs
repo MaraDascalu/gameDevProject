@@ -1,5 +1,8 @@
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,9 +17,19 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject model;
 
+    public GameObject player;
+
     static public bool ableToMove = false;
 
     public static int map;
+
+    IEnumerator jump()
+    {
+        yield return new WaitForSeconds(0.5f);
+        player.GetComponent<BoxCollider>().center = new Vector3(0.0f, 0.0f, 0.0f);
+        player.GetComponent<CharacterController>().center = new Vector3(0.0f, 0.0f, 0.0f);
+
+    }
 
     public void Movement(InputAction.CallbackContext context)
     {
@@ -68,12 +81,17 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 model.GetComponent<Animator>().Play("Jump");
+
+                player.GetComponent<BoxCollider>().center = new Vector3(0.0f, 2.0f, 0.0f);
+                player.GetComponent<CharacterController>().center = new Vector3(0.0f, 2.0f, 0.0f);
+
+                StartCoroutine(jump());
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 model.GetComponent<Animator>().Play("Slide");
-                transform.Translate(0.0f, 0.0f, 5.0f);
+                transform.Translate(0.0f, -25.0f, 5.0f);
             }
 
             if (newPosition.x < _leftRightLimits.x)
@@ -92,4 +110,5 @@ public class PlayerMovement : MonoBehaviour
         transform.localPosition = newPosition;
         transform.Translate(0.0f, 0.0f, _forwardSpeed * Time.deltaTime);
     }
+
 }

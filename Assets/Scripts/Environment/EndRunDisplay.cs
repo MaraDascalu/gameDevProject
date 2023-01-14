@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EndRunDisplay : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class EndRunDisplay : MonoBehaviour
     public GameObject endButton;
     public GameObject coinsCount;
     public GameObject distanceCount;
+    public AudioSource endSound;
+    public AudioSource backgroundSound;
+    public Slider slider;
 
     void Start()
     {
@@ -21,6 +25,8 @@ public class EndRunDisplay : MonoBehaviour
 
     IEnumerator EndDisplay()
     {
+        backgroundSound.Stop();
+        endSound.Play();
         yield return new WaitForSeconds(3);
         coinsLiveScore.SetActive(false);
         runLiveScore.SetActive(false);
@@ -38,6 +44,7 @@ public class EndRunDisplay : MonoBehaviour
             DisplayPlayerBestScoreAndName.playerDistanceBestScoreInt = System.Convert.ToInt32(distanceCount.GetComponent<TMP_Text>().text);
         }
 
+        VolumeSlider.volume = slider.value;
 
         yield return new WaitForSeconds(3);
     }

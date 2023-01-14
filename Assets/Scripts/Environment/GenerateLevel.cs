@@ -25,10 +25,10 @@ public class GenerateLevel : MonoBehaviour
             {
                 StartCoroutine(GenerateSectionCity());
             }
-            /*else if (PlayerMovement.map == 2)
+            else if (PlayerMovement.map == 2)
             {
                 StartCoroutine(GenerateSectionForest());
-            }*/
+            }
         }
 
         if (sectionDelete == false)
@@ -39,10 +39,10 @@ public class GenerateLevel : MonoBehaviour
             {
                 StartCoroutine(DeleteSectionCity());
             }
-            /*else if (PlayerMovement.map == 2)
+            else if (PlayerMovement.map == 2)
             {
                 StartCoroutine(DeleteSectionForest());
-            }*/
+            }
         }
     }
 
@@ -52,7 +52,7 @@ public class GenerateLevel : MonoBehaviour
         currentSection = Instantiate(sectionCity[sectionNumber], new Vector3(0, 0, position), Quaternion.identity);
         activeSectionsCity.Add(currentSection);
         position += 100;
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(3);
         sectionCreation = false;
     }
 
@@ -70,13 +70,13 @@ public class GenerateLevel : MonoBehaviour
             sectionDelete = false;
         }
 
-    /*IEnumerator GenerateSectionForest()
+    IEnumerator GenerateSectionForest()
     {
         sectionNumber = Random.Range(0, 4);
-        currentSection = Instantiate(sectionForest[sectionNumber], new Vector3(-550.0f, 150.0f, position), Quaternion.identity);
+        currentSection = Instantiate(sectionForest[sectionNumber], new Vector3(-600.45f, 109.35f, position - 411), Quaternion.Euler(new Vector3(0, -90, 0)));
         activeSectionsForest.Add(currentSection);
         position += 100;
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(3);
         sectionCreation = false;
     }
 
@@ -84,7 +84,7 @@ public class GenerateLevel : MonoBehaviour
     {
         if (firstDelete == true)
         {
-            yield return new WaitForSeconds(15);
+            yield return new WaitForSeconds(30);
             firstDelete = false;
         }
 
@@ -92,7 +92,7 @@ public class GenerateLevel : MonoBehaviour
         Destroy(activeSectionsForest[0]);
         activeSectionsForest.RemoveAt(0);
         sectionDelete = false;
-    }*/
+    }
 }
 
 
