@@ -15,13 +15,15 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 _movement = Vector2.zero;
 
-    public GameObject model;
+    private GameObject model;
 
     public GameObject player;
 
     static public bool ableToMove = false;
 
     public static int map;
+
+    private int avatarIndex;
 
     IEnumerator jump()
     {
@@ -58,6 +60,11 @@ public class PlayerMovement : MonoBehaviour
             startPosition.z = -516.0f;
             transform.localPosition = startPosition;
         }
+
+        avatarIndex = PlayerPrefs.GetInt("CharacterSelected");
+
+        //Set the actual palyer to the one selected from the avatar menu
+        model = transform.GetChild(1).GetChild(avatarIndex).gameObject;
     }
 
     void Update()
