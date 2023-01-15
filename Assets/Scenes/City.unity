@@ -23951,6 +23951,7 @@ GameObject:
   - component: {fileID: 468731389}
   - component: {fileID: 468731390}
   - component: {fileID: 468731391}
+  - component: {fileID: 468731392}
   m_Layer: 0
   m_Name: LevelControl
   m_TagString: Untagged
@@ -24199,6 +24200,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a450e58ac216ff14da8ee9ad025dbdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &468731392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468731376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61b87f6321054ac6a3b01787326770e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsCount: {fileID: 1097027966}
+  distanceCount: {fileID: 2076943115}
 --- !u!1 &469135285
 GameObject:
   m_ObjectHideFlags: 0
@@ -49448,7 +49463,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1818861082154570, guid: 5e45c8f884f6d124ea0499aae7fdbec8, type: 3}
       propertyPath: m_Name
-      value: Mon_00
+      value: Bomb
       objectReference: {fileID: 0}
     - target: {fileID: 4911057012121422, guid: 5e45c8f884f6d124ea0499aae7fdbec8, type: 3}
       propertyPath: m_RootOrder
@@ -92041,9 +92056,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 468731392}
+        m_TargetAssemblyTypeName: ExitButtonHighScoreUpdate, Assembly-CSharp
+        m_MethodName: UpdateHighScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 569181482}
         m_TargetAssemblyTypeName: GoBackButton, Assembly-CSharp
         m_MethodName: GoBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 744406758}
+        m_TargetAssemblyTypeName: JsonFunctions, Assembly-CSharp
+        m_MethodName: SaveButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

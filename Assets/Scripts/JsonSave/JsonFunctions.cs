@@ -7,7 +7,7 @@ using System.IO;
 
 public class JsonFunctions : MonoBehaviour
 {
-    public void SaveButton()
+        public void SaveButton()
         {
             SaveByJSON();
         }
