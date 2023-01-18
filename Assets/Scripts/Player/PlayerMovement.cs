@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         avatarIndex = PlayerPrefs.GetInt("CharacterSelected");
 
-        //Set the actual palyer to the one selected from the avatar menu
+        //Set the actual player to the one selected from the avatar menu
         model = transform.GetChild(1).GetChild(avatarIndex).gameObject;
     }
 
@@ -97,8 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                model.GetComponent<Animator>().Play("Slide");
-                transform.Translate(0.0f, -25.0f, 5.0f);
+                model.GetComponent<Animator>().Play("Roll");
             }
 
             if (newPosition.x < _leftRightLimits.x)

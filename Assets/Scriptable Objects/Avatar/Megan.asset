@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb7bd77e9e3c4842ae34c3d4e628dea, type: 3}
   m_Name: Megan
   m_EditorClassIdentifier: 
-  avatarIndex: 4
+  avatarIndex: 1
   avatarName: Megan
   sceneToLoad: {fileID: 0}

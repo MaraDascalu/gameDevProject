@@ -322,7 +322,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1859550762}
-        m_TargetAssemblyTypeName: GoBackButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: LevelPickerGoBack, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
         m_Arguments:
@@ -1505,6 +1505,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859550755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7d03fe60d7f0b4fb4f0f543c75ba52, type: 3}
+  m_Script: {fileID: 11500000, guid: e218dbdf10dc79e4c80ec55e57c6a97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
