@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AvatarRotate : MonoBehaviour
 {
-    public float rotationSpeed = 2.5f;
+    public float rotationSpeed = 1.0f;
 
     void Update()
     {
