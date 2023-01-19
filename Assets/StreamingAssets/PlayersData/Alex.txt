@@ -1,1 +1,1 @@
-{"totalCoins":352,"playerName":"Alex","distanceHighscore":546,"coinHighscore":125,"forestUnlocked":0}
+{"totalCoins":452,"playerName":"Alex","distanceHighscore":546,"coinHighscore":125,"forestUnlocked":0}

@@ -1,0 +1,1 @@
+{"totalCoins":4,"playerName":"Mihai","distanceHighscore":58,"coinHighscore":4,"forestUnlocked":0}

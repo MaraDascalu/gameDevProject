@@ -57,18 +57,18 @@ public class GenerateLevel : MonoBehaviour
     }
 
     IEnumerator DeleteSectionCity()
+    {
+        if(firstDelete == true)
         {
-            if(firstDelete == true)
-            {
-                yield return new WaitForSeconds(15);
-                firstDelete = false;
-            }
-
-            yield return new WaitForSeconds(15);
-            Destroy(activeSectionsCity[0]);
-            activeSectionsCity.RemoveAt(0);
-            sectionDelete = false;
+            yield return new WaitForSeconds(30);
+            firstDelete = false;
         }
+
+        yield return new WaitForSeconds(20);
+        Destroy(activeSectionsCity[0]);
+        activeSectionsCity.RemoveAt(0);
+        sectionDelete = false;
+    }
 
     IEnumerator GenerateSectionForest()
     {
