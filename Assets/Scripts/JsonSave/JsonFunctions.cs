@@ -34,12 +34,15 @@ public class JsonFunctions : MonoBehaviour
     {
         Save save = createSaveGameObject();
 
-        string JsonString = JsonUtility.ToJson(save);
-        StreamWriter sw = new StreamWriter(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
-        sw.Write(JsonString);
-        sw.Close();
+        if (string.Compare(save.playerName, "Player") != 0)
+        {
+            string JsonString = JsonUtility.ToJson(save);
+            StreamWriter sw = new StreamWriter(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
+            sw.Write(JsonString);
+            sw.Close();
 
-        Debug.Log("Saved to " + StartNewGameScript.playerName + " JSON");
+            Debug.Log("Saved to " + StartNewGameScript.playerName + " JSON");
+        }
     }
 
     private void LoadByJSON()
