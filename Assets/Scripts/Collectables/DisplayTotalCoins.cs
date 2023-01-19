@@ -5,7 +5,6 @@ using TMPro;
 
 public class DisplayTotalCoins : MonoBehaviour
 {
-
     public GameObject totalCoins;
     public static int currentTotalCoins;
 

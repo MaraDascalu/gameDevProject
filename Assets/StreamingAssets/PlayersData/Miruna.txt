@@ -1,0 +1,1 @@
+{"totalCoins":226,"playerName":"Miruna","distanceHighscore":287,"coinHighscore":125,"forestUnlocked":0}

@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerNameChange.unity
     guid: b0ea3a2167cd046a3aaf369d6884ef43
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LevelPicker.unity
     guid: 146f08265c55046dab95ed79e3096dcc
@@ -29,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerBestScore.unity
     guid: f896401bacce2410493351186c48ac62
+  - enabled: 1
+    path: Assets/Scenes/HallOfFame.unity
+    guid: eedfedd47c74e1a43a960d0fe04f83c3
   m_configObjects: {}

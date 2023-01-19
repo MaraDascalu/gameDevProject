@@ -7,59 +7,66 @@ using System.IO;
 
 public class JsonFunctions : MonoBehaviour
 {
-        public void SaveButton()
+    public void SaveButton()
+    {
+        SaveByJSON();
+    }
+
+    public void LoadButton()
+    {
+        LoadByJSON();
+    }
+
+    private Save createSaveGameObject()
+    {
+        Save save = new Save();
+
+        save.totalCoins = DisplayTotalCoins.currentTotalCoins;
+        save.playerName = StartNewGameScript.playerName;
+        save.distanceHighscore = DisplayPlayerBestScoreAndName.playerDistanceBestScoreInt;
+        save.coinHighscore = DisplayPlayerBestScoreAndName.playerBestScoreInt;
+        save.forestUnlocked = PlayerMovement.forestUnlocked;
+
+        return save;
+    }
+
+    private void SaveByJSON()
+    {
+        Save save = createSaveGameObject();
+
+        string JsonString = JsonUtility.ToJson(save);
+        StreamWriter sw = new StreamWriter(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
+        sw.Write(JsonString);
+        sw.Close();
+
+        Debug.Log("Saved to " + StartNewGameScript.playerName + " JSON");
+    }
+
+    private void LoadByJSON()
+    {
+        Debug.Log(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
+
+        if (File.Exists(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt"))
         {
-            SaveByJSON();
-        }
+            StreamReader sr = new StreamReader(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
+            string JsonString = sr.ReadToEnd();
+            sr.Close();
 
-        public void LoadButton()
+            Save save = JsonUtility.FromJson<Save>(JsonString);
+
+            DisplayTotalCoins.currentTotalCoins = save.totalCoins;
+            StartNewGameScript.playerName = save.playerName;
+            DisplayPlayerBestScoreAndName.playerDistanceBestScoreInt = save.distanceHighscore;
+            DisplayPlayerBestScoreAndName.playerBestScoreInt = save.coinHighscore;
+            PlayerMovement.forestUnlocked = save.forestUnlocked;
+        }
+        else
         {
-            LoadByJSON();
+            Debug.Log("NOT FOUND FILE");
+            DisplayTotalCoins.currentTotalCoins = 0;
+            DisplayPlayerBestScoreAndName.playerDistanceBestScoreInt = 0;
+            DisplayPlayerBestScoreAndName.playerBestScoreInt = 0;
+            PlayerMovement.forestUnlocked = 0;
         }
-
-        private Save createSaveGameObject()
-        {
-            Save save = new Save();
-
-            save.totalCoins = DisplayTotalCoins.currentTotalCoins;
-            save.playerName = StartNewGameScript.playerName;
-            save.distanceHighscore = DisplayPlayerBestScoreAndName.playerDistanceBestScoreInt;
-            save.coinHighscore = DisplayPlayerBestScoreAndName.playerBestScoreInt;
-
-            return save;
-        }
-
-        private void SaveByJSON()
-        {
-            Save save = createSaveGameObject();
-
-            string JsonString = JsonUtility.ToJson(save);
-            StreamWriter sw = new StreamWriter(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
-            sw.Write(JsonString);
-            sw.Close();
-
-            Debug.Log("Saved to " + StartNewGameScript.playerName + " JSON");
-        }
-
-        private void LoadByJSON()
-        {
-            if(File.Exists(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt"))
-            {
-
-                StreamReader sr = new StreamReader(Application.dataPath + "/StreamingAssets/PlayersData/" + StartNewGameScript.playerName + ".txt");
-                string JsonString = sr.ReadToEnd();
-                sr.Close();
-
-                Save save = JsonUtility.FromJson<Save>(JsonString);
-
-                DisplayTotalCoins.currentTotalCoins = save.totalCoins;
-                StartNewGameScript.playerName = save.playerName;
-                DisplayPlayerBestScoreAndName.playerDistanceBestScoreInt = save.distanceHighscore;
-                DisplayPlayerBestScoreAndName.playerBestScoreInt = save.coinHighscore;
-            }
-            else
-            {
-                Debug.Log("NOT FOUND FILE");
-            }
-        }
+    }
 }

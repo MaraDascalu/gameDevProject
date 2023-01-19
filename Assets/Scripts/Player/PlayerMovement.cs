@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     private int avatarIndex;
 
+    public static int forestUnlocked = 0;
+
     IEnumerator jump()
     {
         yield return new WaitForSeconds(0.5f);

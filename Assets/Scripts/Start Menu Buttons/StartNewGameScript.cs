@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class StartNewGameScript : MonoBehaviour
 {
     public static string playerName = "Player";
-    //int value = 0;
 
     class SetInitialVolume
     {
@@ -19,6 +18,6 @@ public class StartNewGameScript : MonoBehaviour
     public void PlayNewGame(){ 
 
         CollectableControl.coinCounter = 0;
-        SceneManager.LoadScene("LevelPicker");
+        SceneManager.LoadScene("AvatarMenu");
     }
 }

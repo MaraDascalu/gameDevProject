@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class ChooseAvatarButton : MonoBehaviour
 {
     public void GoToAvatarMenu(){ 
-        SceneManager.LoadScene("AvatarMenu");
+        SceneManager.LoadScene("HallOfFame");
     }
 }
