@@ -1,0 +1,1 @@
+{"totalCoins":578,"playerName":"Andreea","distanceHighscore":782,"coinHighscore":251,"forestUnlocked":0}
